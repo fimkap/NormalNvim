@@ -18,6 +18,7 @@
 --       -> suda.vim               [write as sudo]
 --       -> vim-matchup            [Improved % motion]
 --       -> hop.nvim               [go to word visually]
+--       -> marks.nvim             [visual marks]
 --       -> nvim-autopairs         [auto close brackets]
 --       -> nvim-ts-autotag        [auto close html tags]
 --       -> lsp_signature.nvim     [auto params help]
@@ -554,6 +555,33 @@ return {
     "smoka7/hop.nvim",
     cmd = { "HopWord" },
     opts = { keys = "etovxqpdygfblzhckisuran" }
+  },
+
+  --  marks.nvim [visual marks]
+  --  https://github.com/chentoast/marks.nvim
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {
+      default_mappings = false,
+      bookmark_0 = {
+        sign = '󱍻',
+        virt_text = '',
+      },
+      mappings = {
+        set_bookmark0 = 'mm',
+        delete_bookmark = 'mx',
+        next_bookmark0 = '[r',
+        prev_bookmark0 = ']r',
+        annotate = 'mt',
+      },
+      refresh_interval = 0,
+    },
+    config = function(_, opts)
+      -- Apply the options manually
+      require('marks').setup(opts)
+      vim.cmd [[highlight MarkSignHL guifg=orange]]
+    end,
   },
 
   --  nvim-autopairs [auto close brackets]

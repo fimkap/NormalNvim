@@ -15,7 +15,7 @@ vim.opt.copyindent = true -- Copy the previous indentation on autoindenting.
 vim.opt.cursorline = true -- Highlight the text line of the cursor.
 vim.opt.expandtab = true -- Enable the use of space in tab.
 vim.opt.fileencoding = "utf-8" -- File content encoding for the buffer.
-vim.opt.fillchars = { eob = " " } -- Disable `~` on nonexistent lines.
+vim.opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "" } -- Disable `~` on nonexistent lines.
 vim.opt.foldenable = true -- Enable fold for nvim-ufo.
 vim.opt.foldlevel = 99 -- set highest foldlevel for nvim-ufo.
 vim.opt.foldlevelstart = 99 -- Start with all code unfolded.
@@ -52,7 +52,7 @@ vim.opt.colorcolumn = "80" -- PEP8 like character limit vertical bar.
 vim.opt.mousescroll = "ver:1,hor:0" -- Disables hozirontal scroll in neovim.
 vim.opt.guicursor = "n:blinkon200,i-ci-ve:ver25" -- Enable cursor blink.
 vim.opt.autochdir = true -- Use current file dir as working dir (See project.nvim).
-vim.opt.scrolloff = 1000 -- Number of lines to leave before/after the cursor when scrolling. Setting a high value keep the cursor centered.
+vim.opt.scrolloff = 8 -- Number of lines to leave before/after the cursor when scrolling. Setting a high value keep the cursor centered.
 vim.opt.sidescrolloff = 8 -- Same but for side scrolling.
 vim.opt.selection = "old" -- Don't select the newline symbol when using <End> on visual mode.
 
